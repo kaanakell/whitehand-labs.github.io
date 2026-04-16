@@ -3,213 +3,387 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Whitehand Labs — Lean Digital Product Studio</title>
+  <title>Kaan Akel — Game Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Whitehand Labs is a boutique digital product studio building lean mobile MVPs, automation systems, and AI-enhanced applications for founders and growing businesses.">
+  <meta name="description" content="Kaan Akel — Unity & Unreal game developer. Explore games, projects, and work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <canvas id="bg"></canvas>
+  <div class="scanlines"></div>
 
   <!-- NAV -->
   <nav>
-    <div class="logo">WHITEHAND LABS</div>
+    <div class="logo">KA<span class="accent">_</span>DEV</div>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#who">Who We Work With</a>
-      <a href="#process">Process</a>
-      <a href="#projects">Projects</a>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero reveal">
+  <section class="hero">
     <div class="hero-inner">
-      <h1>Lean Digital Products & Automation Systems<br>Built to Solve Real Business Problems</h1>
-      <p>
-        Whitehand Labs designs and builds mobile MVPs, automation workflows,
-        and intelligent digital systems for founders and growing businesses.
-        Practical execution. Clear architecture. No hype.
+      <div class="tag">GAME DEVELOPER</div>
+      <h1 class="glitch" data-text="KAAN AKEL">KAAN AKEL</h1>
+      <p class="hero-sub">
+        Unity · Unreal Engine · C# · Gameplay Systems · Shader Dev
       </p>
-      <a href="#contact" class="btn">Start a Project</a>
+      <div class="hero-cta">
+        <a href="https://kaljal.itch.io/" target="_blank" class="btn btn-primary">Play My Games</a>
+        <a href="https://github.com/kaanakell" target="_blank" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section dark reveal">
+  <!-- GAMES -->
+  <section id="games" class="section">
     <div class="container">
-      <h2>Services</h2>
-      <div class="cards">
+      <div class="section-header">
+        <span class="section-tag">// ALL GAMES</span>
+        <h2>Games on itch.io</h2>
+      </div>
 
-        <div class="card">
-          <h3>Mobile MVP Development</h3>
-          <p>
-            Lean mobile applications built for early-stage validation.
-            From idea to working product in weeks, not months.
-          </p>
+      <div class="games-grid">
+
+        <!-- FEATURED: Hollow Grin -->
+        <div class="game-card featured">
+          <div class="game-img-wrap">
+            <img src="images/hollow-grin.png" alt="Hollow Grin">
+            <div class="game-overlay">
+              <div class="overlay-content">
+                <p>Modular combat system · Enemy AI state machines · Custom hit-stop · Animation-driven mechanics</p>
+                <a href="https://kaljal.itch.io/hollow-grin" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Platformer</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>Hollow Grin</h3>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Business Process Automation</h3>
-          <p>
-            Custom digital systems that automate repetitive workflows,
-            reduce operational friction, and improve efficiency.
-          </p>
+        <!-- FEATURED: Cursed Ronin -->
+        <div class="game-card featured">
+          <div class="game-img-wrap">
+            <img src="images/cursed-ronin.png" alt="Cursed Ronin">
+            <div class="game-overlay">
+              <div class="overlay-content">
+                <p>Samurai platformer — precise combat feel, hand-crafted levels. Built for Ludum Dare 50.</p>
+                <a href="https://kaljal.itch.io/cursed-ronin" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Platformer</span></div>
+            <h3>Cursed Ronin</h3>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>AI Feature Integration</h3>
-          <p>
-            Intelligent capabilities added to existing apps and platforms —
-            only where they create real business value.
-          </p>
+        <!-- Mech A Stand -->
+        <div class="game-card">
+          <div class="game-img-wrap">
+            <img src="images/mech-a-stand.png" alt="Mech A Stand">
+            <div class="game-overlay">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/mech-a-stand" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Action</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>MECH-A STAND</h3>
+          </div>
         </div>
 
+        <!-- Monster Food -->
+        <div class="game-card">
+          <div class="game-img-wrap">
+            <img src="images/monster-food.png" alt="Monster Food">
+            <div class="game-overlay">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/monster-food" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Action</span></div>
+            <h3>Monster Food</h3>
+          </div>
+        </div>
+
+        <!-- Bright Minds -->
+        <div class="game-card">
+          <div class="game-img-wrap">
+            <img src="images/bright-minds.png" alt="Bright Minds">
+            <div class="game-overlay">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/bright-minds" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Educational</span></div>
+            <h3>Bright Minds</h3>
+          </div>
+        </div>
+
+        <!-- Lost & Found — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Puzzle">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/lostfound" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Puzzle</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>Lost&amp;Found</h3>
+          </div>
+        </div>
+
+        <!-- CoinStrip — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Puzzle">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/coinstrip" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Puzzle</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>CoinStrip</h3>
+          </div>
+        </div>
+
+        <!-- Match3 Roulette — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Puzzle">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/match3-roulette" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Puzzle</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>Match3 Roulette</h3>
+          </div>
+        </div>
+
+        <!-- Shooter Ropper — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Shooter">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/shooter-ropper" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Shooter</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>Shooter Ropper</h3>
+          </div>
+        </div>
+
+        <!-- Meme Trouble — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Shooter">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/meme-trouble" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Shooter</span><span class="platform-tag browser-tag">Browser</span></div>
+            <h3>Meme Trouble</h3>
+          </div>
+        </div>
+
+        <!-- Cursed Ronin Ludum Ver. — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Platformer">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/cursed-ronin-ludum" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Platformer</span></div>
+            <h3>Cursed Ronin <span class="sub-title">Ludum Ver.</span></h3>
+          </div>
+        </div>
+
+        <!-- AnyOtherSpaceGame — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Shooter">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/anyotherspacegame" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Shooter</span></div>
+            <h3>AnyOtherSpaceGame</h3>
+          </div>
+        </div>
+
+        <!-- Dash Maze — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="Puzzle">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/dash-maze" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Puzzle</span></div>
+            <h3>Dash Maze</h3>
+          </div>
+        </div>
+
+        <!-- Rock Paper Scissors — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="RPS">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/rps" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Casual</span></div>
+            <h3>Rock-Paper-Scissors</h3>
+          </div>
+        </div>
+
+        <!-- MISSKET — no local image -->
+        <div class="game-card">
+          <div class="game-img-wrap no-img" data-genre="MISSKET">
+            <div class="game-overlay always-show">
+              <div class="overlay-content">
+                <a href="https://kaljal.itch.io/missket" target="_blank" class="btn btn-sm">Play on itch.io ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="platform-tag">Action</span></div>
+            <h3>MISSKET</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="see-more">
+        <a href="https://kaljal.itch.io/" target="_blank" class="btn btn-ghost">All games on itch.io ↗</a>
+        <a href="https://github.com/kaanakell" target="_blank" class="btn btn-ghost">Code on GitHub ↗</a>
       </div>
     </div>
   </section>
 
-  <!-- WHO WE WORK WITH -->
-  <section id="who" class="section gradient reveal">
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
     <div class="container">
-      <h2>Who We Work With</h2>
-      <div class="cards">
-
-        <div class="card">
-          <h3>Early-Stage Founders</h3>
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-tag">// ABOUT</span>
+          <h2>Who I Am</h2>
           <p>
-            Founders who need a working mobile MVP to validate,
-            test traction, or prepare for funding.
+            Unity & Unreal game developer with 4+ years building 2D/3D games and interactive applications.
+            I care about tight gameplay feel, clean architecture, and building things that actually work — not just look good.
           </p>
-        </div>
-
-        <div class="card">
-          <h3>Service Businesses</h3>
           <p>
-            Companies ready to automate bookings, internal processes,
-            or client management systems.
+            Currently pursuing a Master's in Digital Learning Games at Tallinn University while
+            shipping personal projects and keeping my skills sharp.
           </p>
+          <a href="mailto:kaanakelkaljal@gmail.com" class="btn btn-primary">Get In Touch</a>
         </div>
-
-        <div class="card">
-          <h3>Small SaaS Teams</h3>
-          <p>
-            SaaS products that need mobile support or AI-enhanced
-            features integrated into their systems.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" class="section dark-alt reveal">
-    <div class="container">
-      <h2>Process</h2>
-      <div class="timeline">
-        <div class="step">
-          <div class="dot"></div>
-          <h3>Clarity</h3>
-          <p>Define the real problem, scope precisely, remove unnecessary complexity.</p>
-        </div>
-        <div class="step">
-          <div class="dot"></div>
-          <h3>System Design</h3>
-          <p>Architecture, user flow, and technical structure built for scalability.</p>
-        </div>
-        <div class="step">
-          <div class="dot"></div>
-          <h3>Build</h3>
-          <p>Lean execution with rapid iteration and focused implementation.</p>
-        </div>
-        <div class="step">
-          <div class="dot"></div>
-          <h3>Launch</h3>
-          <p>Deployment, testing, and refinement based on real-world usage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section gradient reveal">
-    <div class="container">
-      <h2>Selected Work</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="images/cursed-ronin.png" alt="Cursed Ronin">
-          <h3>Cursed Ronin</h3>
-          <a href="https://kaljal.itch.io/cursed-ronin" class="btn">View on itch.io</a>
-        </div>
-        <div class="card">
-          <img src="images/hollow-grin.png" alt="Hollow Grin">
-          <h3>Hollow Grin</h3>
-          <a href="https://kaljal.itch.io/hollow-grin" class="btn">View on itch.io</a>
-        </div>
-        <div class="card">
-          <img src="images/mech-a-stand.png" alt="Mech A Stand">
-          <h3>Mech A Stand</h3>
-          <a href="https://kaljal.itch.io/mech-a-stand" class="btn">View on itch.io</a>
-        </div>
-        <div class="card">
-          <img src="images/monster-food.png" alt="Monster Food">
-          <h3>Monster Food</h3>
-          <a href="https://kaljal.itch.io/monster-food" class="btn">View on itch.io</a>
-        </div>
-        <div class="card">
-          <img src="images/bright-minds.png" alt="Bright Minds">
-          <h3>Bright Minds</h3>
-          <a href="https://kaljal.itch.io/bright-minds" class="btn">View on itch.io</a>
-        </div>
-        <div class="card">
-          <img src="images/room-ai.png" alt="Room AI Interior Design">
-          <h3>Room AI Interior Design</h3>
-          <a href="https://apps.apple.com/us/app/room-ai-interior-design/id6756350721" class="btn">View on AppStore</a>
-        </div>
-        <div class="card">
-          <img src="images/christmas-ai.png" alt="Christmas AI Studio">
-          <h3>Christmas AI Studio</h3>
-          <a href="https://apps.apple.com/us/app/christmas-ai-studio/id6756233385" class="btn">View on AppStore</a>
-        </div>
-        <div class="card">
-          <img src="images/med-ai.png" alt="MedAI Health">
-          <h3>MedAI Health</h3>
-          <a href="https://apps.apple.com/us/app/medai-health/id6757233531" class="btn">View on AppStore</a>
-        </div>
-        <div class="card">
-          <img src="images/scanwise-ai.png" alt="ScanWise AI-Food Scanner">
-          <h3>ScanWise AI-Food Scanner</h3>
-          <a href="https://apps.apple.com/us/app/scanwise-ai-food-scanner/id6751409700" class="btn">View on AppStore</a>
+        <div class="skills-panel">
+          <div class="skill-group">
+            <span class="skill-label">ENGINES</span>
+            <div class="skill-tags">
+              <span>Unity (C#)</span>
+              <span>Unreal Engine</span>
+              <span>Blueprints</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">SYSTEMS</span>
+            <div class="skill-tags">
+              <span>Gameplay Architecture</span>
+              <span>AI & State Machines</span>
+              <span>Physics & Animation</span>
+              <span>Shader Dev (HLSL)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">BACKEND</span>
+            <div class="skill-tags">
+              <span>.NET / ASP.NET</span>
+              <span>REST APIs</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">PLATFORMS</span>
+            <div class="skill-tags">
+              <span>PC / Web</span>
+              <span>Android</span>
+              <span>iOS</span>
+              <span>AR / VR</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="more-projects">
-        <p>See more projects on <a href="https://github.com/kaanakell" target="_blank">GitHub</a> and <a
-            href="https://kaljal.itch.io/" target="_blank">itch.io</a>.</p>
-      </div>
-
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section final reveal">
-    <div class="container">
-      <h2>Let’s Build a Working System</h2>
-      <p>
-        If you’re facing a digital bottleneck or exploring a product idea,
-        let’s turn it into a clear, working solution.
-      </p>
-      <a href="mailto:kaanakelkaljal@gmail.com" class="btn">Get in Touch</a>
+  <section id="contact" class="section contact-section">
+    <div class="container contact-inner">
+      <span class="section-tag">// CONTACT</span>
+      <h2>Let's Talk</h2>
+      <p>Open to game dev collaborations, freelance work, and interesting ideas.</p>
+      <div class="contact-links">
+        <a href="mailto:kaanakelkaljal@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          <span>kaanakelkaljal@gmail.com</span>
+        </a>
+        <a href="https://github.com/kaanakell" target="_blank" class="contact-link">
+          <span class="contact-icon">&#xe800;</span>
+          <span>github.com/kaanakell</span>
+        </a>
+        <a href="https://kaljal.itch.io/" target="_blank" class="contact-link">
+          <span class="contact-icon">⬡</span>
+          <span>kaljal.itch.io</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <footer>
-    © 2026 Whitehand Labs — Lean Digital Product Studio
+    <span>KAAN AKEL</span>
+    <span class="footer-dot">·</span>
+    <span>Game Developer</span>
+    <span class="footer-dot">·</span>
+    <span>© 2026</span>
   </footer>
 
   <script src="script.js"></script>

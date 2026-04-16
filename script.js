@@ -1,71 +1,139 @@
+// ================================
 // SCROLL REVEAL
-const reveals = document.querySelectorAll(".reveal");
+// ================================
+function initReveal() {
+  const reveals = document.querySelectorAll(".section, .game-card, .skill-group, .contact-link, .about-grid > *");
+  reveals.forEach(el => el.classList.add("reveal"));
 
-function revealOnScroll() {
+  function check() {
     reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
-        }
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 80) {
+        el.classList.add("active");
+      }
     });
+  }
+
+  window.addEventListener("scroll", check, { passive: true });
+  check();
 }
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+initReveal();
 
-// STARFIELD BACKGROUND
+// ================================
+// STARFIELD CANVAS
+// ================================
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
+const DPR = window.devicePixelRatio || 1;
+let W, H;
+
 function resize() {
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  W = window.innerWidth;
+  H = window.innerHeight;
+  canvas.width = W * DPR;
+  canvas.height = H * DPR;
+  canvas.style.width = W + "px";
+  canvas.style.height = H + "px";
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 }
 
 resize();
-window.addEventListener("resize", () => {
-    resize();
-    initStars();
-});
+window.addEventListener("resize", () => { resize(); initStars(); });
 
+// Two layers: deep stars (slow, small) + near stars (fast, larger)
 let stars = [];
 
 function initStars() {
-    stars = [];
-    for (let i = 0; i < 250; i++) {
-        stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 2,
-            speed: Math.random() * 0.5 + 0.2
-        });
-    }
+  stars = [];
+  // Deep background stars
+  for (let i = 0; i < 180; i++) {
+    stars.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      size: Math.random() * 0.8 + 0.2,
+      speed: Math.random() * 0.2 + 0.05,
+      opacity: Math.random() * 0.5 + 0.1,
+      layer: 0
+    });
+  }
+  // Nearer stars
+  for (let i = 0; i < 60; i++) {
+    stars.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      size: Math.random() * 1.5 + 0.8,
+      speed: Math.random() * 0.5 + 0.3,
+      opacity: Math.random() * 0.6 + 0.3,
+      layer: 1
+    });
+  }
 }
 
 initStars();
 
+// Occasional shooting star
+let shootingStars = [];
+
+function spawnShootingStar() {
+  if (Math.random() > 0.015) return;
+  shootingStars.push({
+    x: Math.random() * W,
+    y: Math.random() * H * 0.5,
+    length: Math.random() * 120 + 60,
+    speed: Math.random() * 6 + 4,
+    angle: Math.PI / 4 + (Math.random() - 0.5) * 0.4,
+    opacity: 1,
+    life: 1
+  });
+}
+
 function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, W, H);
 
-    stars.forEach(star => {
-        star.y += star.speed;
-        if (star.y > canvas.height) {
-            star.y = 0;
-            star.x = Math.random() * canvas.width;
-        }
+  spawnShootingStar();
 
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-    });
+  // Draw stars
+  stars.forEach(s => {
+    s.y += s.speed;
+    if (s.y > H) {
+      s.y = -2;
+      s.x = Math.random() * W;
+    }
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    ctx.fillStyle = s.layer === 1
+      ? `rgba(200,220,255,${s.opacity})`
+      : `rgba(180,190,220,${s.opacity})`;
+    ctx.fill();
+  });
 
-    requestAnimationFrame(animate);
+  // Draw shooting stars
+  shootingStars = shootingStars.filter(ss => ss.life > 0);
+  shootingStars.forEach(ss => {
+    ss.x += Math.cos(ss.angle) * ss.speed;
+    ss.y += Math.sin(ss.angle) * ss.speed;
+    ss.life -= 0.025;
+
+    const tail = {
+      x: ss.x - Math.cos(ss.angle) * ss.length,
+      y: ss.y - Math.sin(ss.angle) * ss.length
+    };
+
+    const grad = ctx.createLinearGradient(tail.x, tail.y, ss.x, ss.y);
+    grad.addColorStop(0, `rgba(0,255,194,0)`);
+    grad.addColorStop(1, `rgba(0,255,194,${ss.life * 0.9})`);
+
+    ctx.beginPath();
+    ctx.moveTo(tail.x, tail.y);
+    ctx.lineTo(ss.x, ss.y);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  });
+
+  requestAnimationFrame(animate);
 }
 
 animate();
